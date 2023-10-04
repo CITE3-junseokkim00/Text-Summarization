@@ -13,7 +13,7 @@ class KoT5ConditionalGeneration(L.LightningModule):
     def __init__(self, hparams, **kwargs):
         super().__init__()
         self.save_hyperparameters(hparams)
-        self.model = T5ForConditionalGeneration.from_pretrained('./base_hf', local_files_only=True)
+        self.model = T5ForConditionalGeneration.from_pretrained('./small_hf', local_files_only=True)
         self.model.train()
         self.bos_token = '<s>'
         self.eos_token = '</s>'

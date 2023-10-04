@@ -9,7 +9,7 @@ from loguru import logger
 
 # Check where model and the metadata exists
 
-if os.path.exists('./base_hf/config.json') and os.path.exists('./base_hf/pytorch_model.bin'):
+if os.path.exists('./small_hf/config.json') and os.path.exists('./small_hf/pytorch_model.bin'):
     print("READY TO TRAIN")
     pass
 
@@ -33,10 +33,10 @@ class ArgsBase():
 
         parser.add_argument("--train_file", type=str, default='./data/train/train.json',help='train file')
         parser.add_argument('--test_file', type=str, default='./data/test/test.json', help='test file')
-        parser.add_argument('--batch_size', type=int, default=28, help='batch size')
+        parser.add_argument('--batch_size', type=int, default=7, help='batch size')
         parser.add_argument('--checkpoint', type=str, default='checkpoint', help='checkpoint')
         parser.add_argument('--max_len', type=int, default=512, help='max length')
-        parser.add_argument('--max_epochs', type=int, default=10, help='train epochs')
+        parser.add_argument('--max_epochs', type=int, default=5, help='train epochs')
         parser.add_argument('--lr', type=float, default=3e-5, help='The initial learning rate')
         parser.add_argument('--accelerator', type=str, default='gpu', choices=['gpu', 'cpu'], help='choice acclerator')
         parser.add_argument('--num_gpus', type=int, default=1, help='number of gpus')
